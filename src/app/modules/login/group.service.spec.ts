@@ -46,4 +46,4 @@ describe('Group Service', () => {
 
   });
 
-})
+});
