@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginModule } from './modules/login';
+import { ResolverService } from './modules/login/resolver.service';
 
 import { PageNotFoundComponent } from './modules/core';
 import { LoginComponent, AuthGuard } from './modules/login';
@@ -8,7 +9,10 @@ import { LoginComponent, AuthGuard } from './modules/login';
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    resolve: {
+      groups: ResolverService,
+    },
   },
   {
     path: 'register',
